@@ -8,13 +8,16 @@ function FourthLayout() {
       <div>
         <h2>Por que mais de 25.000 empresas escolheram o RD Station?</h2>
         <sub>Combinamos nossos produtos de Marketing e Vendas com pessoas que se importam com seus resultados e um ecossistema que apoia o seu negócio do planejamento à prática.</sub>
-        <button
-          type="button"
+        <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://app.rdstation.com.br/signup"
         >
-          CRIAR CONTA GRATUITA
-        </button>
+          <button>
+          CRIAR CONTA GRATUITA   
+          </button>
+        </a>  
       </div>
-
       <div>
         <div>
           <h3>Entenda melhor como o RD Station Marketing funciona na prática</h3>
