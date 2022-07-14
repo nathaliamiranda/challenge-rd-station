@@ -7,11 +7,41 @@ import Youtube from '../../styles/images/ytb.svg';
 function SocialMidias() {
   return (
     <div>
-      <Twitter/> 
-      <Facebook/>
-      <Instagram/>
-      <Linkedin/>
-      <Youtube/>
+       <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://twitter.com/rd_station"
+      >
+        <Twitter/> 
+      </a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.facebook.com/ResultadosDigitais/"
+      >
+        <Facebook/>
+      </a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.linkedin.com/company/resultadosdigitais"
+      >
+        <Linkedin/>
+      </a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.instagram.com/resdigitais/"
+      >
+        <Instagram/>
+      </a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.youtube.com/channel/UC5lPKvmw6-DFya_qreisENQ"
+      >
+        <Youtube/>
+      </a>  
     </div>
   )
 }
