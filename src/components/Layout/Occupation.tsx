@@ -22,9 +22,13 @@ function Occupation({ change, value }: any) {
         onChange={ ({ target }) => change(target.value)}
         value={value}
       >
-        {occupations.map((occupation) => (
-          <option key={occupation}>
-            {occupation}
+        {occupations.map((occupation, index) => (
+          <option
+            disabled={ index === 0 && value !== "" && true }
+            selected
+            key={ occupation }
+          >
+            { occupation }
           </option>
         ))}
       </select>
