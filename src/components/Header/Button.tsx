@@ -1,11 +1,11 @@
 import Arrow from '../../styles/images/longArrow.svg';
 function Button() {
   return (
-    <section>
-      <button
+    <section className='section-button'>
+      <button className='first-button'
       type='button'
       >BUTTON</button>
-      <button
+      <button className='second-button'
       type='button'
       >BUTTON <Arrow/></button>
     </section>

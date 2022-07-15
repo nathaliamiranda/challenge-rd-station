@@ -1,17 +1,25 @@
+import IRadios from "../../../interfaces/IRadios";
+
 function Radios({
   label,
   setDontHaveUrl,
   text,
   setUrl,
-}: any) {
+  name,
+}: IRadios) {
   return (
-    <label>{ label }
+  <>
+    <label
+      htmlFor={ name }
+      className='data-form'
+    >
+      <p>{ label }</p>
       <input
         type="radio"
         onClick={ () => setDontHaveUrl(setUrl) }
         name="haveUrl"
-      />{ text }
-    </label>
+      />{ text }</label>
+    </>
   );
 }
 

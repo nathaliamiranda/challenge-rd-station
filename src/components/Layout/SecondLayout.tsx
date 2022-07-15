@@ -9,8 +9,7 @@ function SecondLayout() {
         loader={({ src }) => src }
         src={Rdoer}
         alt="Picture of the author"
-        width={600}
-        height={600}
+        className='img-rdoer'
       />
       </div>
       <div>
