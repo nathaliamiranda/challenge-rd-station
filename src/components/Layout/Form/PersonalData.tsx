@@ -127,6 +127,7 @@ function PersonalData({
         visibility={ visibilityPassword }
       />
       <PasswordInput
+        name={""}
         value={ confPassword }
         setField={ setConfPassword }
         label="Confirme sua senha"

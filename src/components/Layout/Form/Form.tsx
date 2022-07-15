@@ -69,9 +69,11 @@ function Form() {
           />
         </label>
         <Radios
+          label={""}
           setDontHaveUrl={ setDontHaveUrl }
           text="Ainda não tenho site"
           setUrl={ true }
+          name={""}
         />
         <Terms />
         <button 

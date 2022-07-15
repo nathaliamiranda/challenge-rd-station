@@ -1,6 +1,6 @@
 export default interface IRadios {
   label: string;
-  setDontHaveUrl: () => void;
+  setDontHaveUrl: (param: boolean) => void;
   text: string;
   setUrl: boolean,
   name: string;
