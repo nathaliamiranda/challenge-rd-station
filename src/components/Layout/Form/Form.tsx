@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import regexUrl from "../../../utils/regexUrl";
 import PersonalData from "./PersonalData";
 import Radios from "./Radios";
@@ -6,8 +6,8 @@ import Terms from "./Terms";
 
 function Form() {
   const [dontHaveUrl, setDontHaveUrl] = useState(true);
-  const [validUrl, setValidUrl] = useState('');
-  const [url, setUrl] = useState('');
+  const [validUrl, setValidUrl] = useState("");
+  const [url, setUrl] = useState("");
   const [buttonChange, setButtonChange] = useState(true);
   const [message, setMessage] = useState(false);
   const [clearState, setClearState] = useState(false);
@@ -20,28 +20,30 @@ function Form() {
   }
 
   useEffect(() => {
-    if (dontHaveUrl) setValidUrl('');
+    if (dontHaveUrl) setValidUrl("");
 
-    if (dontHaveUrl) setUrl('');
+    if (dontHaveUrl) setUrl("");
   }, [buttonChange, dontHaveUrl]);
 
   const sendForm = () => {
     setDontHaveUrl(true);
-    setValidUrl('');
-    setUrl('');
+    setValidUrl("");
+    setUrl("");
     setButtonChange(true);
     setMessage(true);
     setClearState(true);
   }
 
   return (
-    <section>
-      <h4>Comece seus 10 dias de teste grátis do RD Station Marketing!</h4>
-      <p>Não precisa cadastrar cartão de crédito. 😉</p>
+    <section className="form-section">
       <form
         action="https://app.rdstation.com.br/signup"
         method="POST"
+        className="form-section"
       >
+      <h4 className="form-h4">Comece seus 10 dias de teste grátis do RD Station Marketing!</h4>
+      <p className="form-p">Não precisa cadastrar cartão de crédito. 😉</p>
+      <hr/>
         <PersonalData
           buttonChange={ buttonChange }
           setButtonChange={ setButtonChange }
@@ -55,11 +57,13 @@ function Form() {
           setDontHaveUrl={ setDontHaveUrl }
           text="Meu site é"
           setUrl={ false }
+          name={ "radio" }
         />
         <label>
           <input
+            className='input-form'
             placeholder="Insira o endereço do seu site"
-            disabled={dontHaveUrl}
+            disabled={ dontHaveUrl }
             onChange={ ({ target }) => verifyUrl(target.value) }
             value={ url }
           />
@@ -70,7 +74,8 @@ function Form() {
           setUrl={ true }
         />
         <Terms />
-        <button
+        <button 
+          className = 'button-form'
           type="button"
           disabled={ buttonChange }
           onClick= { () => sendForm() }
