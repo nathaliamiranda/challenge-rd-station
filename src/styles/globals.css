@@ -1,16 +1,174 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1440px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.first-button {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 5px 1px black;
+  justify-content: center;
+  align-items: center;
+  font-family: nunito-sans;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 16px;
+  gap: 8px;
+  width: 122px;
+  height: 36px; 
+  background: #FFFFFF;
+}
+.second-button {
+  background: #19C1CE;
+  display: flex;
+  flex-direction: row;
+  font-family: nunito-sans;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0px 3px 1px black;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px; 
 }
 
-* {
-  box-sizing: border-box;
+.section-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  width: 122px;
+  height: 36px; 
+  background: #FFFFFF;
+}
+
+nav {
+  display: flex;
+
+}
+.a-nav {
+  display: flex;
+  padding-left: 60px;
+  
+}
+
+form {
+  position: absolute;
+  width: 496px;
+  height: 1083px;
+  left: 836px;
+  top: 120px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
+  border-radius: 2px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 16px;
+}
+
+.form-p {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  text-align: center;
+  color: #7E8A98;
+}
+
+.form-h4 {
+  font-family: darker-grotesque;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 110%;
+  text-align: center;
+  color: #212429;
+  margin: 10px;
+}
+
+hr {
+  width: 90%; 
+}
+
+.generic-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  width: 480px;
+  height: 25px;
+  border: 2px solid #000000;
+  box-shadow: inset 6px 6px 0px #EEFBFB;
+}
+
+.select-form {
+  width: 490px;
+  height: 30px;
+  border: 2px solid #000000;
+  box-shadow: inset 6px 6px 0px #EEFBFB;
+}
+
+.visibility-button {
+  justify-content: center;
+  align-items: center;
+  font-family: nunito-sans;
+  font-size: 14px;
+  padding: 5px 16px;
+  gap: 8px;
+  width: 488px;
+  height: 25px; 
+  background: #FFFFFF;
+}
+
+.data-form {
+  font-family: nunito-sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin: 15px;
+  text-align: left;
+}
+
+.label-radio {
+  display: block;
+}
+
+.terms-color {
+  color: #19C1CE;
+  font-family: nunito-sans;
+}
+
+.button-form {
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 24px;
+gap: 8px;
+width: 490px;
+height: 40px;
+background: #F2BF4E;
+box-shadow: 0px 5px 1px black;
+}
+
+.img-rdoer {
+position: absolute;
+width: 600px;
+height: 600px;
+left: -45px;
+top: 1283px;
 }

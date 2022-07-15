@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import IPersonalData from "../../../interfaces/IPersonalData";
 import GenericInput from "./GenericInput";
 import Occupation from "./Occupations";
 import PasswordInput from "./PasswordInput";
@@ -10,16 +11,16 @@ function PersonalData({
   dontHaveUrl,
   validUrl,
   setClearState
-}: any) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+}: IPersonalData) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
-  const [phone, setPhone] = useState('');
-  const [validPhone, setValidPhone] = useState('');
-  const [occupation, setOccupation] = useState('');
-  const [password, setPassword] = useState('');
-  const [validPassword, setValidPassword] = useState('');
-  const [confPassword, setConfPassword] = useState('');
+  const [phone, setPhone] = useState("");
+  const [validPhone, setValidPhone] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [password, setPassword] = useState("");
+  const [validPassword, setValidPassword] = useState("");
+  const [confPassword, setConfPassword] = useState("");
   const [visibilityPassword, setVisibilityPassword] = useState(false);
   const [visibilityConfirmPassword, setVisibilityConfirmPassword] = useState(false);
 
@@ -33,7 +34,7 @@ function PersonalData({
   }, [email]);
 
   const verifyPassword = useCallback((pass: string) => {
-    if (password !== confPassword) return setValidPassword('');
+    if (password !== confPassword) return setValidPassword("");
     if (pass.length < 6 || pass.length > 10) return;
     if (!/[A-Z]/.test(pass) || !/[a-z]/.test(pass)) return;
     if (!/[0-9]/.test(pass)) return;
@@ -41,23 +42,23 @@ function PersonalData({
   }, [confPassword, password])
 
   const verifyPhone = (number: string) => {
-    const regExp = RegExp('(\\d{2})(\\d{4,5})(\\d{4})');
+    const regExp = RegExp("(\\d{2})(\\d{4,5})(\\d{4})");
     setPhone(number);
-    setValidPhone('');
+    setValidPhone("");
     if (number.length < 10 || number.length > 11) return;
-    const formattedPhoneNumber = number.replace(regExp, '($1) $2-$3');
+    const formattedPhoneNumber = number.replace(regExp, "($1) $2-$3");
     console.log(formattedPhoneNumber);
     setValidPhone(formattedPhoneNumber)
   }
 
   const handleClick = useCallback(() => {
-    if (validPassword === '') return setButtonChange(true);
-    if (name === '') return setButtonChange(true);
+    if (validPassword === "") return setButtonChange(true);
+    if (name === "") return setButtonChange(true);
     if (validEmail) return setButtonChange(true);
-    if (validPhone === '') return setButtonChange(true);
-    if (occupation === '') return setButtonChange(true);
+    if (validPhone === "") return setButtonChange(true);
+    if (occupation === "") return setButtonChange(true);
     if (!dontHaveUrl) {
-      if (validUrl === '') {
+      if (validUrl === "") {
       return setButtonChange(true);
       }
     }
@@ -66,15 +67,15 @@ function PersonalData({
 
   const clear = useCallback(() => {
     if(clearState) {
-      setName('');
-      setEmail('');
+      setName("");
+      setEmail("");
       setValidEmail(false);
-      setPhone('');
-      setValidPhone('');
-      setOccupation('');
-      setPassword('');
-      setValidPassword('');
-      setConfPassword('');
+      setPhone("");
+      setValidPhone("");
+      setOccupation("");
+      setPassword("");
+      setValidPassword("");
+      setConfPassword("");
       setVisibilityPassword(false);
       setVisibilityConfirmPassword(false);
     }
@@ -90,44 +91,50 @@ function PersonalData({
 
   return (
     <>
-    <GenericInput
-      value={name}
-      setField={setName}
-      label={"Diga, qual seu nome"}
-      placeholder={"Insira seu nome"}
-    />
-    <GenericInput
-      value={email}
-      setField={setEmail}
-      label={"Seu email de trabalho"}
-      placeholder={"Insira seu e-mail"}
-    />
-    <GenericInput
-      value={phone}
-      setField={verifyPhone}
-      label={"Seu telefone"}
-      placeholder={"Insira seu nÃºmero de telefone com DDD"}
-    />
-    <Occupation
-      change={setOccupation}
-      value={occupation}
-    />
-    <PasswordInput
-      value={ password }
-      setField={setPassword}
-      label="Crie uma senha"
-      placeholder="Coloque sua senha"
-      setVisibilityPassword={setVisibilityPassword}
-      visibility={visibilityPassword}
-    />
-    <PasswordInput
-      value={confPassword}
-      setField={setConfPassword}
-      label="Confirme sua senha"
-      placeholder="Confirme sua senha"
-      setVisibilityPassword={setVisibilityConfirmPassword}
-      visibility={visibilityConfirmPassword}
-    />
+      <GenericInput
+        name={ "name" }
+        value={ name }
+        setField={ setName }
+        label={ "Diga, qual seu nome" }
+        placeholder={ "Insira seu nome" }
+      />
+      <GenericInput
+        name={ "email" }
+        value={ email }
+        setField={ setEmail }
+        label={ "Seu email de trabalho" }
+        placeholder={ "Insira seu e-mail" }
+      />
+      <GenericInput
+        name={ "phone" }
+        value={ phone }
+        setField={ verifyPhone }
+        label={ "Seu telefone" }
+        placeholder={ "Insira seu numero de telefone com DDD" }
+      />
+      <Occupation
+        name={ "occupation" }
+        change={ setOccupation }
+        value={ occupation }
+      />
+      <PasswordInput
+        name={ "password" }
+        value={ password }
+        setField={ setPassword }
+        label="Crie uma senha"
+        placeholder="Coloque sua senha"
+        setVisibilityPassword={ setVisibilityPassword }
+        visibility={ visibilityPassword }
+      />
+      <PasswordInput
+        name={""}
+        value={ confPassword }
+        setField={ setConfPassword }
+        label="Confirme sua senha"
+        placeholder="Confirme sua senha"
+        setVisibilityPassword={ setVisibilityConfirmPassword }
+        visibility={ visibilityConfirmPassword }
+      />
     </>
   );
 }

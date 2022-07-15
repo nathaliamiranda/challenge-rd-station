@@ -1,11 +1,11 @@
 function Menu() {
   return (
     <nav>
-      <a>Menu 1</a>
-      <a>Menu 2</a>
-      <a>Menu 3</a>
-      <a>Menu 4</a>
-      <a>Menu 5</a>
+      <a className='a-nav'>Menu 1</a>
+      <a className='a-nav'>Menu 2</a>
+      <a className='a-nav'>Menu 3</a>
+      <a className='a-nav'>Menu 4</a>
+      <a className='a-nav'>Menu 5</a>
     </nav>
   )
 }

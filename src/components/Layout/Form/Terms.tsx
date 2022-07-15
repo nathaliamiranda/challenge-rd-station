@@ -3,15 +3,17 @@ function Terms() {
     <>
       <sup>
         `• Ao criar minha conta estou de acordo com os&nbsp;
-        <a
+        <a 
+          className='terms-color'
           target="_blank"
           rel="noreferrer"
           href="https://legal.rdstation.com/pt-BR/rdstation-services-agreement/"
         >
-        termos de uso&nbsp;
+          termos de uso&nbsp;
         </a>
-        do software e&nbsp;
+          do software e&nbsp;
         <a
+          className='terms-color'
           target="_blank"
           rel="noreferrer"
           href="https://legal.rdstation.com/pt/privacy-policy/"
@@ -24,8 +26,8 @@ function Terms() {
       </sup>
       <sup>
         • Você pode alterar suas permissões de comunicação a qualquer tempo.
-    </sup>
-      </>
+      </sup>
+    </>
   );
 }
 

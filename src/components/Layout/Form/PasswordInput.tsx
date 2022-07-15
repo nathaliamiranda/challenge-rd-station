@@ -1,27 +1,39 @@
+import IPasswordInput from "../../../interfaces/IPasswordInput";
+
 function PasswordInput({
   value,
   setField,
   label,
   placeholder,
   setVisibilityPassword,
-  visibility
-}: any) {
+  visibility,
+  name,
+}: IPasswordInput) {
   return(
-    <label>{ label }
+    <>
+      <label
+        htmlFor={ name }
+        className='data-form'
+      >
+        { label }
+      </label>
       <input
+        className='input-form'
+        name={ name }
         placeholder={ placeholder }
         required={true}
         type={ visibility ? "text" : "password" }
         onChange={ ({ target }) => setField(target.value) }
-        value={value}
+        value={ value }
       />
       <button
+        className='visibility-button'
         onClick={ () => setVisibilityPassword(!visibility) }
         type="button"
       >
-        ChangeVisibility
+          ChangeVisibility
       </button>
-    </label>
+    </>
   )
 }
 

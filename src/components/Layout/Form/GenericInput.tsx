@@ -1,18 +1,28 @@
+import IGenericInput from "../../../interfaces/IGenericInput";
+
 function GenericInput({
   value,
   setField,
   label,
-  placeholder
-}: any) {
+  placeholder,
+  name,
+}: IGenericInput) {
   return(
-    <label>{ label }
-      <input
-        placeholder={ placeholder }
-        required={true}
-        onChange={ ({ target }) => setField(target.value) }
-        value={value}
-      />
-    </label>
+    <>
+      <label htmlFor={ name }
+      className='data-form'
+      >{ label }
+      </label>
+        <input
+          className='input-form'
+          placeholder={ placeholder }
+          required={ true }
+          onChange={ ({ target }) => setField(target.value) }
+          value={ value }
+          id={ name }
+        />
+      
+    </>
   )
 }
 

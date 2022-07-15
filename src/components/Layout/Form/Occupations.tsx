@@ -1,3 +1,5 @@
+import IOccupation from "../../../interfaces/IOccupation";
+
 const occupations = [
   "Selecione Seu Cargo",
   "Sócio(a) / CEO / Proprietário(a)",
@@ -15,12 +17,19 @@ const occupations = [
   "Outros Cargos"
 ];
 
-function Occupation({ change, value }: any) {
+function Occupation({ change, value, name }: IOccupation) {
   return(
-    <label>Seu Cargo de ocupação
+    <>
+      <label
+        htmlFor={ name }
+        className='data-form'
+      >
+        Seu cargo de ocupação
+      </label>
       <select
+        className='select-form'
         defaultValue={ value }
-        onChange={ ({ target }) => change(target.value)}
+        onChange={ ({ target }) => change(target.value) }
       >
         {occupations.map((occupation, index) => (
           <option
@@ -31,7 +40,7 @@ function Occupation({ change, value }: any) {
           </option>
         ))}
       </select>
-    </label>
+    </>
   );
 }
 
