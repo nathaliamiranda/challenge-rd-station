@@ -58,28 +58,6 @@ nav {
   
 }
 
-.about-section {
-  
-}
-
-.about-first-p {
-  color: #19C1CE;
-  font-family: nunito-sans;
-  display: flex;
-}
-
-.about-h1 {
-  color:#212429;
-  font-size: 30px;
-  align-items: center;
-  font-family: nunito-sans;
-  display: flex;
-}
-
-.about-second-p {
-  font-family: nunito-sans;
-}
-
 form {
   position: absolute;
   width: 496px;
